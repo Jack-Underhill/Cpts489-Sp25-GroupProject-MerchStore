@@ -5,6 +5,8 @@
 
 This repository follows a structured branching strategy to ensure smooth development, testing, and integration while minimizing merge conflicts.  
 
+{ `jack`, `joshua`, `nathan`, `luke` } --> `testing` --> `main`
+
 ### **Branch Structure**  
 
 - **Personal Branches (`feature/your-name-*`)**  
