@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Arial"
 }
 
 main {
@@ -13,7 +13,6 @@ main {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
-    font-weight: bold;
 }
 
 .cart-container {
@@ -54,7 +53,6 @@ main {
 
 .summary {
     width: 35%;
-    background-color: #f9f9f9;
     padding: 10px;
     border: 1px solid #ccc;
 }
