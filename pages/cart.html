@@ -1,11 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WSU Merch</title>
+    <title>WSU Merch - Shopping Cart</title>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/cart.css">
 </head>
 <body>
+    <header>
+        <div class="top">
+            <div>WSU Merch</div>
+            <div class="search-cart">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+                <div style="margin-left:20px;">Your Cart</div>
+            </div>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Login</a>
+            <a href="#">About Us</a>
+            <a href="#">FAQ</a>
+        </nav>
+    </header>
     
+    <main>
+        <div class="progress">
+            <div>1. Shopping Cart</div>
+            <div>2. Shipping Details</div>
+            <div>3. Payment Options</div>
+        </div>
+
+        <div class="cart-container">
+            <div class="cart-section">
+                <h2>Shopping Cart</h2>
+                <div class="cart-item">
+                    <img class="item-img"></img>
+                    <div class="item-details">
+                        <p>Product Name</p>
+                        <label for="quantity1">Quantity:</label>
+                        <select id="quantity1">
+                            <option value="1">1 pcs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <img class="item-img"></img>
+                    <div class="item-details">
+                        <p>Product Name</p>
+                        <label for="quantity2">Quantity:</label>
+                        <select id="quantity2">
+                            <option value="1">1 pcs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="cart-buttons">
+                    <button>Next</button>
+                    <button>Cancel</button>
+                </div>
+            </div>
+
+            <div class="summary">
+                <h3>Summary</h3>
+                <p>Subtotal:</p>
+                <p>Shipping:</p>
+                <p>Taxes:</p>
+                <p>Total:</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>1915 Wilson Rd, Pullman, WA 99163</p>
+        <p>WSU Merch</p>
+        <p>Contact Us</p>
+    </footer>
 </body>
 </html>
