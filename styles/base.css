@@ -13,4 +13,6 @@ a {
 a:hover{
     color: #981E32;
     background-color: #FFFFFF;
+    font-weight: bolder;
+    font-size: 17px;
 }

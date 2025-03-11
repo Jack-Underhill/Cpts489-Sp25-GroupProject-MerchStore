@@ -1,15 +1,23 @@
 nav {
+    background-color: #53565A;
     display: flex;
     justify-content: center;
-    gap: 80px;
-    padding: 0px 10px;
-    background: #53565A;
+    gap: 10%;
+
+    padding: 0px 120px;
     margin: 0;
     border-bottom: 3px solid #ddd;
 }
 nav a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     color: #FFFFFF;
     text-decoration: none;
-    margin: 0px;
-    padding: 20px 10px;
+
+    margin: 5px;
+    border-radius: 20px;
+    width: 200px;
+    height: 45px;
 }
