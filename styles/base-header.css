@@ -2,20 +2,50 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px;
-    background: #981E32;
-    color: #FFFFFF;
+
+    padding: 30px 40px;
     border-bottom: 3px solid #ddd;
+
+    color: #FFFFFF;
+    background-color: #981E32;
+}
+.company {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo {
+    width: 100px;
+    height: auto;
+}
+.company-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 26px;
+    font-weight: bold;
+}
+.merch {
+    font-weight: normal;
+    font-size: 22px;
 }
 .search-bar {
-    flex-grow: 1;
     justify-content: center;
-    margin: 0 75px;
+    padding: 0 20px;
+    border-radius: 50px;
+
+    height: 40px;
+    flex-grow: .35;
+
+    font-size: 15px;
+    text-align: left;
 }
 .cart {
-    background-color: #53565A;
-    border: 3px solid #ddd;
     color: #FFFFFF;
-    padding: 20px;
+    background-color: #53565A;
     text-decoration: none;
+
+    padding: 20px;
+    border: 3px solid #ddd;
+    border-radius: 20px;
 }

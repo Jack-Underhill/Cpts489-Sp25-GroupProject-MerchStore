@@ -4,6 +4,12 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+h1, h2, h3 {
+    color: #333;
+}
+a {
+    text-decoration: none;
+}
 a:hover{
     color: #981E32;
     background-color: #FFFFFF;
