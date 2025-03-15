@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const track = document.querySelector(".carousel-items");
     const prevBtn = document.querySelector(".prev-btn");
     const nextBtn = document.querySelector(".next-btn");
-    const products = document.querySelectorAll(".carousel-card");
+    const products = document.querySelectorAll(".carousel-image");
     const visibleItems = 2;
     let index = 0;
     

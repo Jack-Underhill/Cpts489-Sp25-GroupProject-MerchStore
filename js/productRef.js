@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const productName = img.src.split('/').pop().replace(/[-_]/g, ' ').replace(/\..+$/, '');
 
         const button = document.createElement("button");
-        button.classList.add("carousel-card");
+        button.classList.add("product-card");
         button.setAttribute("onclick", `openProductPage('${productName.replace(/ /g, "-")}')`);
 
         const title = document.createElement("span");
-        title.classList.add("carousel-title");
+        title.classList.add("product-title");
         title.textContent = productName;
 
         button.appendChild(img.cloneNode(true));
