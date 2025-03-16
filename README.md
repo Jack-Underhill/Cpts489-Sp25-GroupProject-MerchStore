@@ -5,30 +5,30 @@
 
 This repository follows a structured branching strategy to ensure smooth development, testing, and integration while minimizing merge conflicts.  
 
-{ `jack`, `joshua`, `nathan`, `luke` } --> `develop` --> `main`
+{ `jack`, `joshua`, `nathan`, `luke` } --> `testing` --> `main`
 
 ### **Branch Structure**  
 
 - **Personal Branches (`feature/your-name-*`)**  
   - Each developer creates and works on their own branch (e.g., `feature/alex-new-ui`).  
   - Full control is allowed over personal branches.  
-  - Once a feature is complete, open a **Pull Request (PR)** to merge into `develop`. 
+  - Once a feature is complete, open a **Pull Request (PR)** to merge into `testing`. 
 
-- **`develop` Branch** (Integration & Debugging)  
+- **`testing` Branch** (Integration & Debugging)  
   - The collaborative branch where **all personal branches merge**.  
   - All features should be tested here **before merged into `main`**.  
   - No direct commits; changes must come from personal branches via PRs.  
 
 - **`main` Branch** (Stable & Deployment-Ready)  
   - Should **always** remain stable and production-ready.  
-  - Only accepts **tested changes** from `develop`.  
+  - Only accepts **tested changes** from `testing`.  
   - No direct commits from individual developers.  
 
 ### **Development Instructions**  
 
 1. **Create a Personal Branch**  
     ```sh
-    git checkout -b feature/your-name-description develop
+    git checkout -b feature/your-name-description testing
     ```
 
 2. **Push in Personal Branch**  
@@ -36,30 +36,30 @@ This repository follows a structured branching strategy to ensure smooth develop
     git push origin feature/your-name-description
     ```
 
-3. **Keep Your Personal Branch Updated (Rebase from `develop`)**
+3. **Keep Your Personal Branch Updated (Rebase from `testing`)**
      - Keeping your branch up-to-date helps **reduce merge conflicts**.
     
     ```sh
     git fetch origin
     git checkout feature/your-branch-name
-    git rebase origin/develop
+    git rebase origin/testing
     
     # Resolve conflicts if needed
     git push --force-with-lease origin feature/your-branch-name
     ```
 
-5. **Merge Your Feature Branch into `develop`**  
+5. **Merge Your Feature Branch into `testing`**  
     Once your work is complete:
-    1. Open a **Pull Request (PR)** from your **feature branch** → `develop`.  
+    1. Open a **Pull Request (PR)** from your **feature branch** → `testing`.  
     2. Wait for **at least one review** before merging.
 
-6. **Testing and Bug Fixes in `develop` Branch**  
+6. **Testing and Bug Fixes in `testing` Branch**  
     All testing and debugging happen in testing.
     Fix issues and update the PR if needed.
 
-7. **Merge `develop` into `main`**  
-    Once `develop` is stable:
-    1. Open a **PR to merge `develop` into `main`**.  
+7. **Merge `testing` into `main`**  
+    Once `testing` is stable:
+    1. Open a **PR to merge `testing` into `main`**.  
     2. Ensure no critical bugs exist before merging!  
 
 
@@ -99,9 +99,9 @@ git push --force-with-lease origin feature/your-branch-name
 
 
 ## Best Practices
-- **Keep your branch updated with `develop` using rebase** to avoid conflicts.  
+- **Keep your branch updated with `testing` using rebase** to avoid conflicts.  
 - **Write meaningful commit messages** that explain your changes clearly.  
-- **Review and test code** before merging into `develop`.  
+- **Review and test code** before merging into `testing`.  
 - **Reset your personal branch** before a new milestone to start clean.  
 - **Ask for help** if you encounter **merge conflicts** or **Git issues**. 
 
@@ -111,5 +111,5 @@ git push --force-with-lease origin feature/your-branch-name
  
 ## Next Steps
 - If you're unsure how to start, ask in our team chat.
-- Always check for updates in `develop` before beginning new work.
+- Always check for updates in `testing` before beginning new work.
 - If you need a Git refresher, check the [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf).
