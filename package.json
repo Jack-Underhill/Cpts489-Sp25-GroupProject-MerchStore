@@ -1,0 +1,16 @@
+{
+  "name": "cpts489-sp25-groupproject-merchstore",
+  "version": "1.0.0",
+  "description": "This repository follows a structured branching strategy to ensure smooth development, testing, and integration while minimizing merge conflicts.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
