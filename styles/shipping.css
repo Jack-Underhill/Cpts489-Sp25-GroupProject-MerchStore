@@ -11,6 +11,14 @@ main {
     margin-bottom: 20px;
 }
 
+.progress div{
+    width: 30%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
 .order-details {
     display: flex;
     justify-content: space-between;
