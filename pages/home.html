@@ -4,49 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WSU Merch</title>
+
+    <!-- Common Styles -->
+    <div id="styles-placeholder"></div>
+    <script src="../js/templateStyles.js"></script>
+
+    <!-- Unique Style -->
     <link rel="stylesheet" href="../styles/home.css">
 </head>
 <body>
-    <header class="header">
-        <div class="company">
-            WSU Merch
-        </div>
-        <input type="search-bar" type="text" placeholder="Search">
-        <a href="cart.html" class="cart">
-            Your Cart
-        </a>
-    </header>
-    <nav class="nav">
-        <a href="home.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="login.html">Login</a>
-        <a href="about.html">About Us</a>
-        <a href="faq.html">FAQ</a>
-    </nav>
+    <!-- header -->
+    <div id="header-placeholder"></div>
+    
+    <!-- nav -->
+    <div id="nav-placeholder"></div>
+
+    <!-- content -->
     <section class="featured-products">
-        <h2>Featured-Products</h2>
-        <div class="carousel">
-            <span>&lt;</span>
-            <div class="product">Product 1</div>
-            <div class="product">Product 2</div>
-            <span>&gt;</span>
+        <h2>Featured Products</h2>
+        <div class="carousel-wrapper">
+            <button class="carousel-button prev-btn">
+                <!-- Bootstrap Icon -->
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <div class="carousel-viewport">
+                <div class="carousel-items">
+                    <img class="product-ref carousel-image" src="../images/products/Nike-Fleece-Pullover-Hoodie.png" alt="">
+                    <img class="product-ref carousel-image" src="../images/products/Trucker-Hat.png" alt="">
+                    <img class="product-ref carousel-image" src="../images/products/Cougs-Coors-Baseball-Jersey.png" alt="">
+                    <img class="product-ref carousel-image" src="../images/products/Can-Hoodie-Black.png" alt="">
+                    <img class="product-ref carousel-image" src="../images/products/Charcoal-Crew-Neck-Sweatshirt.png" alt="">
+                    <img class="product-ref carousel-image" src="../images/products/Mans-Best-Friend-T-shirt.png" alt="">
+                </div>
+            </div>
+            <button class="carousel-button next-btn">
+                <!-- Bootstrap Icon -->
+                <i class="bi bi-chevron-right"></i>
+            </button>
         </div>
     </section>
-    <section class="product-grid">
-        <div class="product">Product 1</div>
-        <div class="product">Product 2</div>
-        <div class="product">Product 3</div>
-        <div class="product">Product 4</div>
-        <div class="product">Product 5</div>
-        <div class="product">Product 6</div>
+    <section class="product-grid-section">
+        <h2>Popular Items</h2>
+        <div class="product-grid">
+            <div class="grid-left">
+                <img class="product-ref grid-image" src="../images/products/Copper-Bowl-Crew-Neck.png" alt="">
+            </div>
+            <div class="grid-right">
+                <img class="product-ref grid-image" src="../images/products/Basketball-Jersey.png" alt="">
+                <img class="product-ref grid-image" src="../images/products/Tote-Bag.png" alt="">
+                <img class="product-ref grid-image" src="../images/products/Black-Stainless-Tumbler.png" alt="">
+                <img class="product-ref grid-image" src="../images/products/Wallet-Sleeve.png" alt="">
+                <img class="product-ref grid-image" src="../images/products/Car-Decal.png" alt="">
+                <img class="product-ref grid-image" src="../images/products/Mug.png" alt="">
+            </div>
+        </div>
     </section>
     <section class="about-section">
         <h2>About Our Shop</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In nihil quis quisquam, ipsum enim voluptatem ut? Esse natus velit et sint deserunt. Incidunt, quaerat, laudantium magni temporibus consequatur similique ex molestias adipisci nulla eos quod id qui eaque dicta, deleniti exercitationem. Animi obcaecati accusantium ipsa tempore labore nobis odio quae?</p>
     </section>
-    <footer class="footer">
-        <p>1815 Wilson Rd, Pullman, WA 99163</p>
-        <p>&copy; WSU Merch | <a href="contact.html" class="contact">Contact Us</a></p>
-    </footer>
+
+    <!-- footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- scripts -->
+    <script src="../js/header.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/productRef.js"></script>
+    <script src="../js/carousel.js"></script>
 </body>
 </html>
