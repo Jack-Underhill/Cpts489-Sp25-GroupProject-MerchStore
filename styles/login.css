@@ -64,6 +64,13 @@ h2 {
     border-radius: 5px;
 }
 
+.input-group span {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    color: red;
+}
+
 .login-btn {
     width: 100%;
     padding: 10px;
