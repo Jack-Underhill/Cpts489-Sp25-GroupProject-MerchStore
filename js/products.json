@@ -1,0 +1,50 @@
+[
+    {
+        "id": "Copper-Bowl-Crew-Neck",
+        "name": "Copper Bowl Crew Neck",
+        "price": 49.99,
+        "description": "A soft and stylish crew neck sweatshirt perfect for any occasion.",
+        "image": "../images/products/Copper-Bowl-Crew-Neck.png",
+        "attributes": ["Sweatshirt", "Unisex", "Cotton", "Red"]
+    },
+    {
+        "id": "Basketball-Jersey",
+        "name": "Basketball Jersey",
+        "price": 39.99,
+        "description": "A breathable jersey perfect for sports and casual wear.",
+        "image": "../images/products/Basketball-Jersey.png",
+        "attributes": ["Jersey", "Sportswear", "Polyester", "White"]
+    },
+    {
+        "id": "Black-Stainless-Tumbler",
+        "name": "Black Stainless Tumbler",
+        "price": 19.99,
+        "description": "A sleek black tumbler to keep your drinks hot or cold.",
+        "image": "../images/products/Black-Stainless-Tumbler.png",
+        "attributes": ["Tumbler", "Stainless Steel", "Drinkware", "Black"]
+    },
+    {
+        "id": "Trucker-Hat",
+        "name": "Trucker Hat",
+        "price": 24.99,
+        "description": "Classic trucker hat with WSU branding.",
+        "image": "../images/products/Trucker-Hat.png",
+        "attributes": ["Hat", "Unisex", "Headwear"]
+    },
+    {
+        "id": "Mug",
+        "name": "WSU Coffee Mug",
+        "price": 12.99,
+        "description": "Classic WSU mug for your coffee needs.",
+        "image": "../images/products/Mug.png",
+        "attributes": ["Drinkware", "Ceramic", "Mug"]
+    },
+    {
+        "id": "Wallet-Sleeve",
+        "name": "Wallet Sleeve",
+        "price": 9.99,
+        "description": "Slim wallet sleeve with WSU logo.",
+        "image": "../images/products/Wallet-Sleeve.png",
+        "attributes": ["Accessories", "Wallet"]
+    }
+]

@@ -1,4 +1,4 @@
-nav {
+.nav {
     background-color: #53565A;
     display: flex;
     justify-content: center;
@@ -8,7 +8,7 @@ nav {
     margin: 0;
     border-bottom: 3px solid #ddd;
 }
-nav a{
+.nav a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,4 +20,7 @@ nav a{
     border-radius: 20px;
     width: 200px;
     height: 45px;
+}
+.nav a:hover {
+    color: #A60F2D;
 }

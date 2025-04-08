@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSU Merch</title>
+
+    <!-- Common Styles -->
+    <div id="styles-placeholder"></div>
+    <script src="../js/templateStyles.js"></script>
+
+    <!-- Unique Style -->
+    <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body>
+    <!-- header -->
+    <div id="header-placeholder"></div>
+    
+    <!-- nav -->
+    <div id="nav-placeholder"></div>
+
+    <!-- content -->
+    <div class="admin-container">
+        <!-- admin panel -->
+        <div id="adminPanel-placeholder"></div>
+
+        <main class="admin-content">
+            <h1>Manage Products</h1>
+            <div id="message" class="hidden"></div>
+            <button id="add-product-btn">Add New Product</button>
+            
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list"></tbody>
+            </table>
+
+            <div id="product-modal" class="modal hidden">
+                <div class="modal-content">
+                    <form id="product-form">
+                        <h2 id="form-title">Add Product</h2>
+                        <input type="text" id="product-name" placeholder="Product Name" required>
+                        <input type="number" id="product-price" placeholder="Price" step="0.01" min="0" required>
+                        <textarea id="product-description" placeholder="Description"></textarea>
+                        <div class="form-buttons">
+                            <button type="submit">Save</button>
+                            <button type="button" id="cancel-btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- scripts -->
+    <script src="/js/header.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="js/adminPanel.js"></script>
+    <script src="js/adminProducts.js"></script>
+</body>
+</html>
