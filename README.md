@@ -7,6 +7,23 @@ This repository follows a structured branching strategy to ensure smooth develop
 
 { `jack`, `joshua`, `nathan`, `luke` } --> `testing` --> `main`
 
+## Setting up your local database
+
+1. Install dependencies
+    ```sh
+    npm install
+    ```
+
+2. Seed the database
+    ```sh
+    node lib/seed.js
+    ```
+    or
+    ```sh
+    npm run seed
+    ```
+  - This will create a fresh local SQLite file and populate it with products from /js/products.json.
+
 ### **Branch Structure**  
 
 - **Personal Branches (`feature/your-name-*`)**  

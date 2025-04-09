@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7"
+  },
+  "scripts": {
+    "seed": "node lib/seed.js"
+  }
+}
