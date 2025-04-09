@@ -6,6 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const formattedName = productName.replace(/-/g, ' ');
 
         document.getElementById("product-title").textContent = formattedName;
-        document.getElementById("main-image").src = `../images/products/${productName}.png`;
+        document.getElementById("main-image").src = `/public/images/products/${productName}.png`;
     }
 });

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("../js/products.json")
+    fetch("/public/js/products.json")
         .then(response => response.json())
         .then(products => {
             document.getElementById("total-products").textContent = products.length;

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function ()
 {
-    fetch("/admin/adminPanel.html")
+    fetch("/public/admin/adminPanel.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("adminPanel-placeholder").innerHTML = data;

@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function ()
     let products = [];
 
     // Load product list
-    fetch("../js/products.json")
+    fetch("/public/js/products.json")
         .then(response => response.json())
         .then(data => {
             products = data;
