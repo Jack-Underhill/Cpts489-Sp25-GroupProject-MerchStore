@@ -1,0 +1,29 @@
+.content-section {
+    text-align: center;
+}
+
+.order-space {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.table thead tr th {
+    background-color: #A60F2D;
+    color: white;
+}
+
+.table .address-row th, .table .address-row td, .table .body-header th, .table .subtotal th, .table .subtotal td{
+    background-color: lightgray;
+}
+
+.table .subtotal td {
+    padding-left: 7%;
+}
+
+.items {
+    vertical-align: middle;
+}
+
+.items img {
+    width: 250px;
+}
