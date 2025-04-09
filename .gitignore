@@ -1,0 +1,11 @@
+database/merchstore.sqlite
+
+node_modules/
+
+.vscode/
+.env
+
+# ignore logs
+*.log
+.DS_Store
+Thumbs.db
