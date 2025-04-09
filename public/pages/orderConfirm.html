@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - WSU Merch</title>
+    <div id="styles-placeholder"></div>
+    <script src="/public/js/templateStyles.js"></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div id="nav-placeholder"></div>
+
+    <main style="text-align:center; padding: 60px 20px;">
+        <h1>Order Confirmed!</h1>
+        <p>Thank you for shopping at WSU Merch. Your order has been successfully placed.</p>
+        <p><strong>Order ID:</strong> <span id="order-id">Loading...</span></p>
+        <p><strong>Estimated Delivery:</strong> <span id="delivery-estimate">2-3 Business Days</span></p>
+        <a href="home" class="login-btn" style="margin-top: 20px; display: inline-block;">Continue Shopping</a>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/public/js/header.js"></script>
+    <script src="/public/js/nav.js"></script>
+    <script src="/public/js/footer.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // fake order generation
+            const fakeOrderId = 'WSU' + Math.floor(Math.random() * 900000 + 100000);
+            document.getElementById("order-id").textContent = fakeOrderId;
+        });
+    </script>
+</body>
+</html>

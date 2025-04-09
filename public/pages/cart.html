@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WSU Merch - Shopping Cart</title>
+    <link rel="stylesheet" href="/public/styles/cart.css">
+
+    <!-- Common Styles -->
+    <div id="styles-placeholder"></div>
+    <script src="/public/js/templateStyles.js"></script>
+</head>
+<body>
+    
+    <!-- header -->
+    <div id="header-placeholder"></div>
+
+    <!-- nav -->
+    <div id="nav-placeholder"></div>
+
+    <main>
+        <div class="progress">
+            <div style="background-color: #981e32; color: white;">1. Shopping Cart</div>
+            <div>2. Shipping Details</div>
+            <div>3. Payment Options</div>
+        </div>
+
+        <div class="cart-container">
+            <div class="cart-section">
+                <h2>Shopping Cart</h2>
+                <div class="cart-item">
+                    <img class="item-img"></img>
+                    <div class="item-details">
+                        <p>Product Name</p>
+                        <label for="quantity1">Quantity:</label>
+                        <select id="quantity1">
+                            <option value="1">1 pcs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <img class="item-img"></img>
+                    <div class="item-details">
+                        <p>Product Name</p>
+                        <label for="quantity2">Quantity:</label>
+                        <select id="quantity2">
+                            <option value="1">1 pcs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="cart-buttons">
+                    <button onclick="location.href='shipping'">Next</button>
+                    <button>Cancel</button>
+                </div>
+            </div>
+
+            <div class="summary">
+                <h3>Summary</h3>
+                <p>Subtotal:</p>
+                <p>Shipping:</p>
+                <p>Taxes:</p>
+                <p>Total:</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- scripts -->
+    <script src="/public/js/header.js"></script>
+    <script src="/public/js/nav.js"></script>
+    <script src="/public/js/footer.js"></script>
+</body>
+</html>
