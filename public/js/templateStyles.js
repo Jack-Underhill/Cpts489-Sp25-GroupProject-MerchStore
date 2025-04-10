@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function ()
 {
-    fetch("/public/components/templateStyles.html")
+    fetch("/components/templateStyles.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("styles-placeholder").innerHTML = data;
