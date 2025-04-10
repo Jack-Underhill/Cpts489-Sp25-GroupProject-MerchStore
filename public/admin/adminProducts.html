@@ -7,10 +7,10 @@
 
     <!-- Common Styles -->
     <div id="styles-placeholder"></div>
-    <script src="/public/js/templateStyles.js"></script>
+    <script src="/js/templateStyles.js"></script>
 
     <!-- Unique Style -->
-    <link rel="stylesheet" href="/public/admin/styles/admin.css">
+    <link rel="stylesheet" href="/admin/styles/admin.css">
 </head>
 <body>
     <!-- header -->
@@ -42,11 +42,19 @@
 
             <div id="product-modal" class="modal hidden">
                 <div class="modal-content">
-                    <form id="product-form">
+                    <form id="product-form" enctype="multipart/form-data">
                         <h2 id="form-title">Add Product</h2>
-                        <input type="text" id="product-name" placeholder="Product Name" required>
-                        <input type="number" id="product-price" placeholder="Price" step="0.01" min="0" required>
-                        <textarea id="product-description" placeholder="Description"></textarea>
+                        <input type="text" id="product-name" name="name" placeholder="Product Name" required>
+                        <input type="number" id="product-price" name="price" placeholder="Price" step="0.01" min="0" required>
+                        <textarea id="product-description" name="description" placeholder="Description"></textarea>
+
+                        <label for="product-attributes">Attributes</label>
+                        <input type="text" id="product-attributes" name="attributes" placeholder="e.g. Sweatshirt, Hooded, Red" required>
+
+                        <label for="product-image">Image</label>
+                        <input type="file" id="product-image" name="image" accept="image/*">
+                        <div id="current-image-preview"></div>
+
                         <div class="form-buttons">
                             <button type="submit">Save</button>
                             <button type="button" id="cancel-btn">Cancel</button>
@@ -61,11 +69,10 @@
     <div id="footer-placeholder"></div>
 
     <!-- scripts -->
-    <script src="/public/js/header.js"></script>
-    <script src="/public/js/nav.js"></script>
-    <script src="/public/js/footer.js"></script>
-    <script src="/public/admin/js/admin.js"></script>
-    <script src="/public/admin/js/adminPanel.js"></script>
-    <script src="/public/admin/js/adminProducts.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="/admin/js/adminPanel.js"></script>
+    <script src="/admin/js/adminProducts.js"></script>
 </body>
 </html>
