@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function ()
         productList.innerHTML = "";
         products.forEach((product, index) => {
             console.log(`Product: ${product.name}`);
-            console.log('Attributes:', product.Attributes);
+            console.log('Attributes:', product.attributes);
             console.log('Object:', product);
 
             const row = document.createElement("tr");
@@ -95,7 +95,8 @@ document.addEventListener("DOMContentLoaded", function ()
                 document.getElementById('product-name').value = product.name;
                 document.getElementById('product-price').value = product.price;
                 document.getElementById('product-description').value = product.description;
-                document.getElementById('product-attributes').value = (product.Attributes || []).map(a => a.name).join(', ');
+                // document.getElementById('product-attributes').value = (product.attributes || []).map(a => a.name).join(', ');
+                document.getElementById('product-attributes').value = (product.attributes || []).join(', ');
                 
                 imagePreview.innerHTML = `<p>Current image:</p><img src="${product.imageUrl}" alt="${product.name}" height="80px">`;
                 
@@ -108,10 +109,26 @@ document.addEventListener("DOMContentLoaded", function ()
         deleteButtons.forEach(btn => {
             btn.addEventListener("click", () => {
                 const index = btn.getAttribute("data-index");
-                if(confirm(`Are you sure you want to delete "${products[index].name}"?`)) {
-                    products.splice(index, 1);
-                    renderProductTable();
-                    showMessage("Product deleted successfully!");
+                const product = products[index];
+
+                if(confirm(`Are you sure you want to delete "${product.name}"?`)) {
+                    fetch(`/api/products/${product.id}`, {
+                        method: "DELETE"
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        if(data.success) {
+                            products.splice(index, 1);
+                            renderProductTable();
+                            showMessage("Product deleted successfully!");
+                        } else {
+                            showMessage("Failed to delete product", "error"); 
+                        }
+                    })
+                    .catch(err => {
+                        console.error("Error deleting product:", err);
+                        showMessage("Error deleting product", "errer");
+                    });
                 }
             });
         });
@@ -124,49 +141,65 @@ document.addEventListener("DOMContentLoaded", function ()
         const name = nameInput.value;
         const price = parseFloat(priceInput.value);
         const description = descInput.value;
+        const attributes = attrInput.value;
         const imageFile = document.getElementById("product-image").files[0];
-        const attributes = document.getElementById("product-attributes").value;
 
         const formData = new FormData();
         formData.append("name", name);
         formData.append("price", price);
         formData.append("description", description);
-        // formData.append("image", imageFile);
         formData.append("attributes", attributes);
 
-        // const isEditing = editIndex !== null;
-        // const currentProduct = isEditing ? products[editIndex] : null;
+        const isEditing = editIndex !== null;
+        const currentProduct = isEditing ? products[editIndex] : null;
 
-        // if(isEditing) {
-        //     formData.append("id", currentProduct.id);
-        //     if(imageFile) {
-        //         formData.append("image", imageFile);
-        //     }
+        if(isEditing) {
+            formData.append("id", currentProduct.id);
             
-        //     fetch("/api/products", {
-        //         method: "PUT",
-        //         body: formData
-        //     })
-        //     .then(res => res.json())
-        //     .then(updated => {
-        //         products[editIndex] = updated;
-        //         renderProductTable();
-        //         showMessage("Product updated successfully!");
-        //     })
-        //     .catch(err => {
-        //         console.error("Error updating product:", err);
-        //         showMessage("Error updating product", "errer");
-        //     });
-        // } 
-        // else {
-            formData.append("image", imageFile);
+            if(imageFile) {
+                formData.append("image", imageFile);
+            }
+            
+            fetch("/api/products", {
+                method: "PUT",
+                body: formData
+            })
+            .then(() => {
+                if(imageFile) {
+                    location.reload();
+                    return;
+                }
+                return fetch("/api/products");
+            })
+            .then(res => res?.json?.())
+            .then(data => {
+                if(!data) return;
+                products = data;
+                renderProductTable();
+                showMessage("Product updated successfully!");
+            })
+            .catch(err => {
+                console.error("Error updating product:", err);
+                showMessage("Error updating product", "errer");
+            });
+        } 
+        else {
+            if(imageFile) {
+                formData.append("image", imageFile);
+            } else {
+                formData.append("placeholder", "true");
+            }
+
             fetch("/api/products", {
                 method: "POST",
                 body: formData
             })
+            .then(() => {
+                return fetch("/api/products");
+            })
             .then(res => res.json())
             .then(data => {
-                products.push(data);
+                products = data;
                 renderProductTable();
                 showMessage("Product added successfully!");
             })
@@ -174,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function ()
                 console.error("Error adding product:", err);
                 showMessage("Error adding product", "errer");
             });
-        // }
+        }
         
         modal.classList.add(CLASS_HIDDEN);
         productForm.reset();

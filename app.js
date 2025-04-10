@@ -77,8 +77,32 @@ app.post('/api/products', async (req, res) => {
                 return res.status(400).json({ error: 'A product with this name already exists.' });
             }
             
-            const imageUrl = `/images/products/${req.file.filename}`;
+            let imageUrl;
             
+            if(req.file) {
+                const ext = path.extname(req.file.originalname);
+                const safeName = name.trim().replace(/\s+/g, '-');
+                const newFilename = `${safeName}${ext}`;
+
+                const fs = require('fs');
+                const oldPath = req.file.path;
+                const newPath = path.join(__dirname, 'public/images/products', newFilename);
+
+                fs.renameSync(oldPath, newPath);
+                imageUrl = `/images/products/${newFilename}`;
+            } else {
+                const fs = require('fs');
+                const ext = '.png';
+                const safeName = name.trim().replace(/\s+/g, '-');
+                const newFilename = `${safeName}${ext}`;
+
+                const srcPath = path.join(__dirname, 'public/images/placeholder.png');
+                const dstPath = path.join(__dirname, 'public/images/products', newFilename);
+
+                fs.copyFileSync(srcPath, dstPath);
+                imageUrl = `/images/products/${newFilename}`;
+            }
+
             const product = await Product.create({
                 name,
                 price: parseFloat(price),
@@ -96,7 +120,14 @@ app.post('/api/products', async (req, res) => {
                 }
             }
             
-            res.status(201).json(product);
+            const fullProduct = await Product.findByPk(product.id, {
+                include: {
+                    model: Attribute,
+                    through: { attributes: [] },
+                }
+            });
+
+            res.status(201).json(fullProduct);
         });
     } catch (err) {
         console.error('Error creating product:', err);
@@ -104,23 +135,86 @@ app.post('/api/products', async (req, res) => {
     }
 });
 
-// app.put('/api/products', express.json(), async (req, res) => {
-//     try {
-        
-//     } catch (err) {
-//         console.error('Error  product:', err);
-//         res.status(500).json({ error: 'Failed to ' });
-//     }
-// });
+app.put('/api/products', upload.single("image"), async (req, res) => {
+    try {
+        const { id, name, price, description, attributes } = req.body;
+        console.log("BODY", req.body);
+        console.log("FILE:", req.file);
 
-// app.delete('/api/products', express.json(), async (req, res) => {
-//     try {
+        const product = await Product.findByPk(id);
+        if(!product) {
+            return res.status(404).json({ error: "Product not found" });
+        }
+
+        product.name = name;
+        product.price = parseFloat(price);
+        product.description = description;
+
+        if(req.file) {
+            const ext = path.extname(req.file.originalname);
+            const safeName = name.trim().replace(/\s+/g, '-');
+            product.imageUrl = `/images/products/${safeName}${ext}`
+        }
+
+        await product.save();
+
+        if(attributes) {
+            const attrList = attributes.split(',').map(attr => attr.trim());
+
+            const foundAttrs = await Promise.all(attrList.map(async (attrName) => {
+                const [attribute] = await Attribute.findOrCreate({
+                    where: { name: attrName, type: 'tag' },
+                });
+
+                return attribute;
+            }));
+
+            await product.setAttributes(foundAttrs);
+        }
+            
+        const fullProduct = await Product.findByPk(product.id, {
+            include: {
+                model: Attribute,
+                through: { attributes: [] },
+            }
+        });
+
+        res.status(200).json(fullProduct);
+    } catch (err) {
+        console.error('Error  product:', err);
+        res.status(500).json({ error: 'Failed to ' });
+    }
+});
+
+app.delete('/api/products/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const product = await Product.findByPk(id);
         
-//     } catch (err) {
-//         console.error('Error  product:', err);
-//         res.status(500).json({ error: 'Failed to ' });
-//     }
-// });
+        if(!product) {
+            return res.status(404).json({ error: "Product not found" });
+        }
+        
+        const fs = require('fs');
+        const rawImageUrl = product.imageUrl || '';
+        const cleanImagePath = rawImageUrl.replace(/^\/+/, '');
+        const imagePath = path.resolve(__dirname, 'public', cleanImagePath);
+
+        if(fs.existsSync(imagePath)) {
+            fs.unlink(imagePath, err => {
+                if(err) {
+                    console.warn("Failed to delete image file:", err);
+                }
+            });
+        }
+
+        await product.destroy();
+        res.json({ success: true });
+    } catch (err) {
+        console.error('Error  product:', err);
+        res.status(500).json({ error: 'Failed to ' });
+    }
+});
 
 // Route to any page
 app.get('/:page', (req, res) => {
