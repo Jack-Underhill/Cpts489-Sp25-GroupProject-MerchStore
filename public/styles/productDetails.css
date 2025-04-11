@@ -59,7 +59,24 @@ main {
 }
 
 .product-info button {
-    margin-right: 10px;
+    padding: 10px 20px;
+    margin: 10px 10px 0 0;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.product-info button:first-of-type {
+    background-color: #981E32;
+    color: white;
+}
+
+.product-info button:first-of-type:hover {
+    background-color: #730d21;
+    transform: scale(1.05);
 }
 
 .similar {
@@ -80,14 +97,4 @@ main {
     margin-right: 10px;
     padding: 10px;
     text-align: center;
-}
-
-footer {
-    background: #f2f2f2;
-    padding: 10px;
-    text-align: center;
-}
-
-footer p {
-    margin: 5px 0;
 }

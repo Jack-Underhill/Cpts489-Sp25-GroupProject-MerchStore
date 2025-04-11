@@ -20,5 +20,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function openProductPage(productName) {
-    window.location.href = `productDetails.html?product=${encodeURIComponent(productName)}`;
+    window.location.href = `/pages/productDetails.html?product=${encodeURIComponent(productName)}`;
 }
