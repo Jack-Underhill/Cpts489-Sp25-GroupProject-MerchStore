@@ -10,7 +10,7 @@
     <script src="/js/templateStyles.js"></script>
 
     <!-- Unique Style -->
-
+    <link rel="stylesheet" href="/styles/contact.css">
 </head>
 <body>
     <!-- header -->
@@ -20,7 +20,30 @@
     <div id="nav-placeholder"></div>
 
     <!-- content -->
-     
+    <section class="section-wrapper">
+        <div class="section-left">
+            <img src="/images/Official-Logo.png" alt="WSU Merch Logo" class="login-logo">
+        </div>
+        <div class="section-right">
+            <div class="contact-wrapper">
+                <h2>Contact Us</h2>
+                <form id="email-us">
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="name" id="name" placeholder="Your full name" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Email address" required>
+                        <label for="subject">Subject</label>
+                        <input type="subject" id="subject" placeholder="Subject line" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="subject" placeholder="Write your email here" rows="10" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <!-- footer -->
     <div id="footer-placeholder"></div>
