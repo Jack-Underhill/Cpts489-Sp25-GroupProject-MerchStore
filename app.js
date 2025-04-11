@@ -228,6 +228,37 @@ app.delete('/api/products/:id', async (req, res) => {
     }
 });
 
+// Get product by ID
+app.get('/api/products/id/:id', async (req, res) => {
+    try {
+        const productId = req.params.id;
+
+        const product = await Product.findByPk(productId, {
+            include: {
+                model: Attribute,
+                through: { attributes: [] }
+            }
+        });
+
+        if (!product) {
+            return res.status(404).json({ error: 'Product not found.' });
+        }
+
+        res.json({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            description: product.description,
+            imageUrl: product.imageUrl,
+            attributes: product.Attributes.map(attr => attr.name)
+        });
+
+    } catch (err) {
+        console.error('Error fetching product:', err);
+        res.status(500).json({ error: 'Internal server error.' });
+    }
+});
+
 // Sign-in endpoint
 app.post('/api/login', async (req, res) => {
     try {
