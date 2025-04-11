@@ -1,0 +1,94 @@
+.section-wrapper {
+    position: relative;
+    overflow: hidden;
+    
+    width: 90%;
+    height: 800px;
+    margin: 5% auto;
+
+    border-style: solid;
+    border-color: #53565A;
+}
+
+.section-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background-color: #940229;
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-logo {
+    transform: translateX(-30px);
+    width: 50%;
+    height: auto;
+}
+
+.section-right {
+    position: absolute;
+    top: 0;
+    right: 20%;
+    width: 50%;
+    height: 95%;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h2 {
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #444;
+}
+.input-group input {
+    width: 300%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-group textarea {
+    width: 300%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize:none;
+}
+
+.input-group span {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    color: red;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #981E32;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn:hover {
+    background-color: #730d21;
+}
