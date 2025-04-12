@@ -33,7 +33,7 @@
     },
     {
         "id": "Mug",
-        "name": "WSU Coffee Mug",
+        "name": "Mug",
         "price": 12.99,
         "description": "Classic WSU mug for your coffee needs.",
         "image": "/images/products/Mug.png",
@@ -46,5 +46,69 @@
         "description": "Slim wallet sleeve with WSU logo.",
         "image": "/images/products/Wallet-Sleeve.png",
         "attributes": ["Accessories", "Wallet"]
+    },
+    {
+        "id": "Can-Hoodie-Black",
+        "name": "Can Hoodie Black",
+        "price": 14.99,
+        "description": "A novelty black can hoodie to keep your drinks insulated and stylish.",
+        "image": "/images/products/Can-Hoodie-Black.png",
+        "attributes": ["Drinkware", "Accessory", "Insulated", "Black"]
+    },
+    {
+        "id": "Can-Hoodie-Red",
+        "name": "Can Hoodie Red",
+        "price": 14.99,
+        "description": "A novelty red can hoodie to keep your drinks cozy with WSU pride.",
+        "image": "/images/products/Can-Hoodie-Red.png",
+        "attributes": ["Drinkware", "Accessory", "Insulated", "Red"]
+    },
+    {
+        "id": "Car-Decal",
+        "name": "Car Decal",
+        "price": 6.99,
+        "description": "Peel-and-stick WSU car decal with various designs for Cougar fans.",
+        "image": "/images/products/Car-Decal.png",
+        "attributes": ["Sticker", "Car Accessory", "Decal"]
+    },
+    {
+        "id": "Charcoal-Crew-Neck-Sweatshirt",
+        "name": "Charcoal Crew Neck Sweatshirt",
+        "price": 49.99,
+        "description": "Charcoal gray crew neck sweatshirt featuring classic WSU lettering.",
+        "image": "/images/products/Charcoal-Crew-Neck-Sweatshirt.png",
+        "attributes": ["Sweatshirt", "Unisex", "Cotton", "Gray"]
+    },
+    {
+        "id": "Cougs-Coors-Baseball-Jersey",
+        "name": "Cougs Coors Baseball Jersey",
+        "price": 59.99,
+        "description": "Baseball-style jersey featuring Cougs branding and Coors styling.",
+        "image": "/images/products/Cougs-Coors-Baseball-Jersey.png",
+        "attributes": ["Jersey", "Limited Edition", "White"]
+    },
+    {
+        "id": "Mans-Best-Friend-T-Shirt",
+        "name": "Mans Best Friend T-Shirt",
+        "price": 24.99,
+        "description": "Soft red WSU tee featuring Butch and 'Man's Best Friend' graphic.",
+        "image": "/images/products/Mans-Best-Friend-T-Shirt.png",
+        "attributes": ["T-Shirt", "Graphic Tee", "Unisex", "Red"]
+    },
+    {
+        "id": "Nike-Fleece-Pullover-Hoodie",
+        "name": "Nike Fleece Pullover Hoodie",
+        "price": 64.99,
+        "description": "Official Nike WSU fleece hoodie with gray sleeves and crimson body.",
+        "image": "/images/products/Nike-Fleece-Pullover-Hoodie.png",
+        "attributes": ["Hoodie", "Nike", "Fleece", "Unisex", "Red", "Gray"]
+    },
+    {
+        "id": "Tote-Bag",
+        "name": "Tote Bag",
+        "price": 14.99,
+        "description": "Reusable WSU-branded tote bag for books, groceries, and more.",
+        "image": "/images/products/Tote-Bag.png",
+        "attributes": ["Bag", "Tote", "Reusable", "Canvas"]
     }
 ]

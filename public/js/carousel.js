@@ -2,12 +2,24 @@ document.addEventListener("DOMContentLoaded", function() {
     const track = document.querySelector(".carousel-items");
     const prevBtn = document.querySelector(".prev-btn");
     const nextBtn = document.querySelector(".next-btn");
-    const products = document.querySelectorAll(".carousel-image");
+    
+    // Wait until images are wrapped in product card buttons
+    const interval = setInterval(() => {
+        const cards = document.querySelectorAll(".carousel-items .product-card");
+        
+        if(cards.length > 0) {
+            clearInterval(interval);
+            initCarousel(track, prevBtn, nextBtn, cards);
+        }
+    }, 100); 
+});
+
+function initCarousel(track, prevBtn, nextBtn, cards) {
     const visibleItems = 2;
     let index = 0;
     
     function getProductWidth() {
-        const productWidth = products[0].offsetWidth;
+        const productWidth = cards[0].offsetWidth;
         const gapSize = parseInt(getComputedStyle(track).gap) || 0;
 
         return productWidth + gapSize;
@@ -19,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     nextBtn.addEventListener("click", () => {
-        if (index < Math.ceil(products.length / visibleItems) - 1) {
+        if (index < Math.ceil(cards.length / visibleItems) - 1) {
             index++;
         }
         else {
@@ -33,12 +45,11 @@ document.addEventListener("DOMContentLoaded", function() {
             index--;
         }
         else {
-            index = Math.ceil(products.length / visibleItems) - 1;
+            index = Math.ceil(cards.length / visibleItems) - 1;
         }
         updateCarousel();
     });
 
-    window.addEventListener("resize", () => {
-        updateCarousel();
-    });
-});
+    window.addEventListener("resize", updateCarousel);
+    updateCarousel();
+}

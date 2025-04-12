@@ -63,13 +63,14 @@ async function applyAttributesToProduct(product, attributesStr, isEdit = false) 
 
     const attrList = attributesStr.split(',').map(attr => attr.trim());
 
-    const foundAttrs = await Promise.all(attrList.map(async (attrName) => {
+    const foundAttrs = [];
+    for(const attrName of attrList) {
         const [attribute] = await Attribute.findOrCreate({
             where: { name: attrName, type: 'tag' },
         });
 
-        return attribute;
-    }));
+        foundAttrs.push(attribute);
+    };
 
     if(isEdit) {
         await product.setAttributes(foundAttrs);
@@ -109,14 +110,17 @@ async function prepareAndPersistProduct({ req, name, price, description, existin
         existingProduct = Product.build();
     }
 
-    existingProduct.name = name;
-    existingProduct.price = parseFloat(price);
-    existingProduct.description = description;
-
     // Assigned unless: no image uploaded and product already existed.
     if(imageUrl) {
         existingProduct.imageUrl = imageUrl;
+    } else {
+        /* the unless case: no image uploaded and product already existed. */
+        renameProductImage(existingProduct, name, newFilename);
     }
+
+    existingProduct.name = name;
+    existingProduct.price = parseFloat(price);
+    existingProduct.description = description;
 
     await existingProduct.save();
     return existingProduct;
@@ -156,6 +160,20 @@ async function isProductNameTaken(name, excludeId = null) {
     const existing = await Product.findOne({ where: whereClause });
     return !!existing;
 } 
+
+function renameProductImage(product, newName, newFilename) {
+    const oldName = product.name;
+    if(!product.imageUrl || oldName === newName) return;
+
+    const oldFilename = product.imageUrl.split('/').pop();
+    const oldPath = path.resolve(__dirname, '../public/images/products', oldFilename);
+    const newPath = path.resolve(__dirname, '../public/images/products', newFilename);
+
+    if(fs.existsSync(oldPath)) {
+        fs.renameSync(oldPath, newPath);
+        product.imageUrl = `/images/products/${newFilename}`;
+    }
+}
 
 module.exports = {
     PLACEHOLDER_IMAGE,
