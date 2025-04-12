@@ -164,7 +164,10 @@ document.addEventListener("DOMContentLoaded", function ()
                 method: "PUT",
                 body: formData
             })
-            .then(() => {
+            .then(async res => {
+                const data = await res.json();
+                if(!res.ok) throw new Error(data.error || "Failed to update product");
+
                 if(imageFile) {
                     location.reload();
                     return;
@@ -180,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function ()
             })
             .catch(err => {
                 console.error("Error updating product:", err);
-                showMessage("Error updating product", "errer");
+                showMessage(err.message || "Error updating product", "error");
             });
         } 
         else {
@@ -194,7 +197,11 @@ document.addEventListener("DOMContentLoaded", function ()
                 method: "POST",
                 body: formData
             })
-            .then(() => {
+            .then(async res => {
+                const data = await res.json();
+                if(!res.ok) throw new Error(data.error || "Failed to add product");
+
+                
                 return fetch("/api/products");
             })
             .then(res => res.json())
@@ -205,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function ()
             })
             .catch(err => {
                 console.error("Error adding product:", err);
-                showMessage("Error adding product", "errer");
+                showMessage(err.message || "Error adding product", "error");
             });
         }
         
