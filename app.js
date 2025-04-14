@@ -95,6 +95,7 @@ app.post('/api/register', async (req, res) => {
 
         // Create a new user with the provided data (no password encryption is applied).
         const newUser = await User.create({ username, email, password });
+        req.session.user = newUser; // auto login the user to the session
         res.status(201).json({
             success: true,
             message: 'User registered successfully!',
