@@ -19,6 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function openProductPage(productName) {
-    window.location.href = `/pages/productDetails.html?product=${encodeURIComponent(productName)}`;
-}
+function openProductPage(productId) {
+    window.location.href = `/pages/productDetails.html?product=${productId}`;
+  }
