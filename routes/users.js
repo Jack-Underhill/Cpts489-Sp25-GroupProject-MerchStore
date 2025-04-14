@@ -85,4 +85,50 @@ router.post('/logout', (req, res) => {
     });
 });
 
+router.get('/users', async (req, res) => {
+    try {
+        const users = await User.findAll({
+            attributes: ['id', 'username', 'email', 'role']
+        });
+        res.json(users);
+    } catch (err) {
+        console.error('Error fetching users:', err);
+        res.status(500).json({ error: 'Failed to fetch users.' });
+    }
+});
+
+router.put('/users/:id/role', async (req, res) => {
+    const { role } = req.body;
+
+    try {
+        const user = await User.findByPk(req.params.id);
+        if(!user) return res.status(404).json({ error: 'User not found' });
+
+        if(!['admin', 'customer'].includes(role)) {
+            return res.status(400).json({ error: 'Invalid role' });
+        }
+
+        user.role = role;
+        await user.save();
+
+        res.json({ message: `User role updated to ${role}` });
+    } catch (err) {
+        console.error('Error updating user role:', err);
+        res.status(500).json({ error: 'Failed to update user role.' });
+    }
+});
+
+router.delete('/users/:id', async (req, res) => {
+    try {
+        const user = await User.findByPk(req.params.id);
+        if(!user) return res.status(404).json({ error: 'User not found' });
+
+        await user.destroy();
+        res.json({ message: `User deleted successfully` });
+    } catch (err) {
+        console.error('Error deleting user:', err);
+        res.status(500).json({ error: 'Failed to delete user.' });
+    }
+});
+
 module.exports = router;

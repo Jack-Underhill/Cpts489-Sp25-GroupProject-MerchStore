@@ -25,7 +25,21 @@
         <div id="adminPanel-placeholder"></div>
 
         <main class="admin-content">
-            <h1>Manage Statistics</h1>
+            <h1>Manage Users</h1>
+            <div id="message" class="message"></div>
+            
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="user-list"></tbody>
+            </table>
+
         </main>
     </div>
 
@@ -36,7 +50,7 @@
     <script src="/js/header.js"></script>
     <script src="/js/nav.js"></script>
     <script src="/js/footer.js"></script>
-    <script src="/admin/js/admin.js"></script>
     <script src="/admin/js/adminPanel.js"></script>
+    <script src="/admin/js/adminUsers.js"></script>
 </body>
 </html>
