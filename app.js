@@ -6,6 +6,8 @@ const port = process.env.PORT || 3000;
 
 const productRoutes = require('./routes/products.js');
 
+const { User, Product, CartItem } = require('./lib/associations');
+
 // Session middleware
 app.use(session({
     secret: 'secret',
