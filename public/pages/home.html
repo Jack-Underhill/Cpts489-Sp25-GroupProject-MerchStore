@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +13,11 @@
     <!-- Unique Style -->
     <link rel="stylesheet" href="/styles/home.css">
 </head>
+
 <body>
     <!-- header -->
     <div id="header-placeholder"></div>
-    
+
     <!-- nav -->
     <div id="nav-placeholder"></div>
 
@@ -29,12 +31,15 @@
             </button>
             <div class="carousel-viewport">
                 <div class="carousel-items">
-                    <img class="product-ref carousel-image" src="/images/products/Nike-Fleece-Pullover-Hoodie.png" alt="">
+                    <img class="product-ref carousel-image" src="/images/products/Nike-Fleece-Pullover-Hoodie.png"
+                        alt="">
                     <img class="product-ref carousel-image" src="/images/products/Trucker-Hat.png" alt="">
-                    <img class="product-ref carousel-image" src="/images/products/Cougs-Coors-Baseball-Jersey.png" alt="">
+                    <img class="product-ref carousel-image" src="/images/products/Cougs-Coors-Baseball-Jersey.png"
+                        alt="">
                     <img class="product-ref carousel-image" src="/images/products/Can-Hoodie-Black.png" alt="">
-                    <img class="product-ref carousel-image" src="/images/products/Charcoal-Crew-Neck-Sweatshirt.png" alt="">
-                    <img class="product-ref carousel-image" src="/images/products/Butch-T-Shirt.png" alt="">
+                    <img class="product-ref carousel-image" src="/images/products/Charcoal-Crew-Neck-Sweatshirt.png"
+                        alt="">
+                    <img class="product-ref carousel-image" src="/images/products/Mans-Best-Friend-T-shirt.png" alt="">
                 </div>
             </div>
             <button class="carousel-button next-btn">
@@ -47,21 +52,37 @@
         <h2>Popular Items</h2>
         <div class="product-grid">
             <div class="grid-left">
-                <img class="product-ref grid-image" src="/images/products/Copper-Bowl-Crew-Neck.png" alt="">
+                <button class="product-card" onclick="openProductPage(1)">
+                    <img class="grid-image" src="/images/products/Copper-Bowl-Crew-Neck.png"
+                        alt="Copper Bowl Crew Neck" />
+                </button>
             </div>
             <div class="grid-right">
-                <img class="product-ref grid-image" src="/images/products/Basketball-Jersey.png" alt="">
-                <img class="product-ref grid-image" src="/images/products/Tote-Bag.png" alt="">
-                <img class="product-ref grid-image" src="/images/products/Black-Stainless-Tumbler.png" alt="">
-                <img class="product-ref grid-image" src="/images/products/Wallet-Sleeve.png" alt="">
-                <img class="product-ref grid-image" src="/images/products/Car-Decal.png" alt="">
-                <img class="product-ref grid-image" src="/images/products/Mug.png" alt="">
+                <button class="product-card" onclick="openProductPage(2)">
+                    <img class="grid-image" src="/images/products/Basketball-Jersey.png" alt="Basketball Jersey" />
+                </button>
+                <button class="product-card" onclick="openProductPage(3)">
+                    <img class="grid-image" src="/images/products/Black-Stainless-Tumbler.png"
+                        alt="Black Stainless Tumbler" />
+                </button>
+                <button class="product-card" onclick="openProductPage(4)">
+                    <img class="grid-image" src="/images/products/Trucker-Hat.png" alt="Trucker Hat" />
+                </button>
+                <button class="product-card" onclick="openProductPage(5)">
+                    <img class="grid-image" src="/images/products/Mug.png" alt="WSU Coffee Mug" />
+                </button>
+                <button class="product-card" onclick="openProductPage(6)">
+                    <img class="grid-image" src="/images/products/Wallet-Sleeve.png" alt="Wallet Sleeve" />
+                </button>
             </div>
         </div>
     </section>
     <section class="about-section">
         <h2>About Our Shop</h2>
-        <div id="about-placeholder"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In nihil quis quisquam, ipsum enim voluptatem ut?
+            Esse natus velit et sint deserunt. Incidunt, quaerat, laudantium magni temporibus consequatur similique ex
+            molestias adipisci nulla eos quod id qui eaque dicta, deleniti exercitationem. Animi obcaecati accusantium
+            ipsa tempore labore nobis odio quae?</p>
     </section>
 
     <!-- footer -->
@@ -75,4 +96,5 @@
     <script src="/js/productRef.js"></script>
     <script src="/js/syncAboutSection.js"></script>
 </body>
+
 </html>
