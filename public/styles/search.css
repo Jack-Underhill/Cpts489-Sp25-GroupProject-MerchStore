@@ -32,8 +32,9 @@
 
 .product-image {
     width: 100%;
+    height: auto;
     max-height: 180px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 5px;
 }
 
@@ -45,18 +46,4 @@
 .product-info p {
     color: #981E32;
     font-weight: bold;
-}
-
-.view-btn {
-    display: inline-block;
-    margin-top: 10px;
-    background-color: #981E32;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 4px;
-    text-decoration: none;
-}
-
-.view-btn:hover {
-    background-color: #730d21;
 }

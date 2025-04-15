@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const sequelize = require('../lib/db');
 
 const { Product, Attribute, Order, OrderItem, CartItem, User } = require('../lib/associations');
 const productHelpers = require('../backend/productHelpers');
@@ -54,6 +55,39 @@ router.get('/id/:id', async (req, res) => {
             attributes: product.Attributes.map(attr => attr.name)
         });
 
+    } catch (err) {
+        console.error('Error fetching product:', err);
+        res.status(500).json({ error: 'Internal server error.' });
+    }
+});
+
+router.get('/search', async (req, res) => {
+    const { q } = req.query;
+
+    if(!q || typeof q !== "string") {
+        return res.status(400).json({ error: 'Missing query parameter `q`.' });
+    }
+
+    try {
+        const rawQuery = `
+            SELECT Product.id, Product.name, Product.description, Product.price, Product.imageUrl, 
+                GROUP_CONCAT(Attributes.name) AS "Attributes"
+            FROM Products AS Product 
+            INNER JOIN ProductAttributes AS ProductAttributes 
+                ON Product.id = ProductAttributes.productId
+            INNER JOIN Attributes AS Attributes 
+                ON ProductAttributes.attributeId = Attributes.id
+            WHERE LOWER(Product.name) LIKE :q
+                OR LOWER(Attributes.name) LIKE :q
+            GROUP BY Product.id;
+        `;
+
+        const results = await sequelize.query(rawQuery, {
+            replacements: { q: `%${q.toLowerCase()}%` },
+            type: sequelize.QueryTypes.SELECT
+        });
+
+        res.json(results);
     } catch (err) {
         console.error('Error fetching product:', err);
         res.status(500).json({ error: 'Internal server error.' });
