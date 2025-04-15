@@ -1,19 +1,9 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const query = urlParams.get("query")?.toLowerCase() || "";
-
-    const summary = document.getElementById("search-summary");
-    const resultsContainer = document.getElementById("search-results");
-
-    if (!query) {
-        summary.textContent = "No search query provided.";
-        return;
-    }
-
-    summary.textContent = `Search results for "${query}"...`;
+    const summary = document.getElementById("shop-summary");
+    const resultsContainer = document.getElementById("shop-results");
 
     try {
-        const res = await fetch(`/api/products/search?q=${encodeURIComponent(query)}`);
+        const res = await fetch("/api/products");
         const products = await res.json();
 
         if(!Array.isArray(products) || products.length === 0) {
@@ -21,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             return;
         }
 
-        summary.textContent = `Showing ${products.length} result(s) for "${query}":`;
+        summary.textContent = `Showing ${products.length} products available:`;
 
         resultsContainer.innerHTML = "";
         resultsContainer.classList.add("search-results-grid");
