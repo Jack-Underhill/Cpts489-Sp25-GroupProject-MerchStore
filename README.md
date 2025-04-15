@@ -20,6 +20,15 @@
     ```
   - This will create a fresh local SQLite file and populate it with products from /js/products.json.
 
+## DEFAULT User Accounts
+
+- **Customer**
+    - Email:     customer@example.com
+    - Password:  12345
+- **Admin**
+    - Email:     user@name.com
+    - Password:  password
+
 ## 🔄 Branch Workflow & Development Guide  (For our team: here down)
 
 This repository follows a structured branching strategy to ensure smooth development, testing, and integration while minimizing merge conflicts.  
