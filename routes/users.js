@@ -143,4 +143,36 @@ router.delete('/users/:id', async (req, res) => {
     }
 });
 
+router.get('/findUser/:email', async (req, res) => {
+    try {
+        const email = req.params.email
+        const user = await User.findOne({ where: { email: email }});
+        if (!user) return res.status(404).json({ error: 'User not found'});
+
+        return res.status(200).json(user)
+    } catch (err) {
+        console.error('Error finding user:', err);
+        res.status(500).json({ error: 'Failed to find user.' });
+    }
+})
+
+router.put('/resetPassword', async (req, res) => {
+    try {
+        const email = req.body.email
+        const password = req.body.password
+
+        const user = await User.findOne({ where: { email: email }});
+        if (!user) return res.status(404).json({ error: 'User not found'});
+
+        user.password = password
+
+        await user.save()
+
+        return res.status(200).json(user)
+    } catch (err) {
+        console.error('Error resetting password:', err);
+        res.status(500).json({ error: 'Failed to reset password.' });
+    }
+})
+
 module.exports = router;
