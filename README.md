@@ -18,16 +18,30 @@
     ```sh
     npm run seed
     ```
-  - This will create a fresh local SQLite file and populate it with products from /js/products.json.
+  - This will create a fresh local SQLite file and populate it with products & users from: 
+    - [/js/products.json](./public/js/products.json).
+    - [/js/users.json](./public/js/users.json).
 
 ## DEFAULT User Accounts
 
 - **Customer**
-    - Email:     customer@example.com
-    - Password:  12345
+    - Email:
+        ```sh
+        customer@example.com 
+        ```
+    - Password:     
+        ```sh
+        12345 
+        ```
 - **Admin**
-    - Email:     user@name.com
-    - Password:  password
+    - Email:   
+        ```sh
+        user@name.com
+        ```
+    - Password:     
+        ```sh
+        password 
+        ```
 
 ## 🔄 Branch Workflow & Development Guide  (For our team: here down)
 
