@@ -1,28 +1,30 @@
 # Cpts489-Sp25-GroupProject-MerchStore
 
 
-## 🔄 Branch Workflow & Development Guide  
-
-This repository follows a structured branching strategy to ensure smooth development, testing, and integration while minimizing merge conflicts.  
-
-{ `jack`, `joshua`, `nathan`, `luke` } --> `testing` --> `main`
-
-## Setting up your local database
+## Setting up your local Server & Database
 
 1. Install dependencies
     ```sh
     npm install
+    npm run init-start
     ```
 
-2. Seed the database
+2. Start Server (without resetting database)
     ```sh
-    node lib/seed.js
+    npm start
     ```
-    or
+
+3. Just want to reset (seed) the database
     ```sh
     npm run seed
     ```
   - This will create a fresh local SQLite file and populate it with products from /js/products.json.
+
+## 🔄 Branch Workflow & Development Guide  (For our team: here down)
+
+This repository follows a structured branching strategy to ensure smooth development, testing, and integration while minimizing merge conflicts.  
+
+{ `jack`, `joshua`, `nathan`, `luke` } --> `testing` --> `main`
 
 ### **Branch Structure**  
 
