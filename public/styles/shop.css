@@ -1,0 +1,14 @@
+.shop-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+}
+.shop-title {
+    margin-bottom: 20px;
+}
+.shop-wrapper p {
+    color: #981E32;
+    font-size: 18px;
+}

@@ -19,7 +19,11 @@ document.getElementById('login-form').addEventListener('submit', async function(
             messageDiv.style.color = 'green';
 
             setTimeout(() => {
-                window.location.href = '/pages/home.html';
+                if(data.user?.role === 'admin') {
+                    window.location.href = '/admin/adminDashboard.html';
+                } else {
+                    window.location.href = '/pages/account.html';
+                }
             }, 1000);
         } else {
             messageDiv.textContent = data.error || 'Login failed';

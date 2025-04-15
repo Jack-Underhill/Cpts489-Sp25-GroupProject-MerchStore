@@ -26,8 +26,12 @@ document.getElementById('register-form').addEventListener('submit', async functi
             messageDiv.textContent = data.message;
             messageDiv.style.color = 'green';
             setTimeout(() => {
-                window.location.href = '/pages/login.html';
-            }, 1500);
+                if(data.user?.role === 'admin') {
+                    window.location.href = '/admin/adminDashboard.html';
+                } else {
+                    window.location.href = '/pages/account.html';
+                }
+            }, 1000);
         } else {
             messageDiv.textContent = data.error || 'Registration failed';
             messageDiv.style.color = 'red';

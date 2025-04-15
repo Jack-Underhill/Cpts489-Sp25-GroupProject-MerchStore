@@ -102,24 +102,26 @@
     justify-content: center;
 }
 
-.product-table {
+.product-table, .user-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-.product-table th, .product-table td {
+.product-table th, .product-table td, 
+.user-table th, .user-table td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
 }
 
-.product-table th {
+.product-table th, .user-table th {
     background-color: #981E32;
     color: white;
 }
 
-.edit-btn, .delete-btn {
+.edit-btn, .delete-btn, 
+.make-admin-btn, .remove-admin-btn, .delete-user-btn {
     margin-right: 10px;
     padding: 5px;
     cursor: pointer;

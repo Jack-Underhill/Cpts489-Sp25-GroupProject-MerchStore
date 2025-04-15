@@ -1,29 +1,30 @@
-.content-section {
-    text-align: center;
+.account-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    /* padding-top: 80px; */
+}
+.account-title {
+    margin-bottom: 20px;
 }
 
-.order-space {
-    width: 50%;
-    margin: 0 auto;
+#profile-info {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
 }
 
-.table thead tr th {
-    background-color: #A60F2D;
+#logout-customer {
+    background-color: #981E32;
     color: white;
+    border: none;
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
 }
-
-.table .address-row th, .table .address-row td, .table .body-header th, .table .subtotal th, .table .subtotal td{
-    background-color: lightgray;
-}
-
-.table .subtotal td {
-    padding-left: 7%;
-}
-
-.items {
-    vertical-align: middle;
-}
-
-.items img {
-    width: 250px;
+#logout-customer:hover {
+    background-color: #7a1628;
 }

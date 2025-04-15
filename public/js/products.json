@@ -88,11 +88,11 @@
         "attributes": ["Jersey", "Limited Edition", "White"]
     },
     {
-        "id": "Mans-Best-Friend-T-Shirt",
-        "name": "Mans Best Friend T-Shirt",
+        "id": "Butch-T-Shirt",
+        "name": "Butch T-Shirt",
         "price": 24.99,
         "description": "Soft red WSU tee featuring Butch and 'Man's Best Friend' graphic.",
-        "image": "/images/products/Mans-Best-Friend-T-Shirt.png",
+        "image": "/images/products/Butch-T-Shirt.png",
         "attributes": ["T-Shirt", "Graphic Tee", "Unisex", "Red"]
     },
     {

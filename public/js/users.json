@@ -1,0 +1,20 @@
+[
+    {
+      "username": "user",
+      "email": "user@name.com",
+      "password": "password",
+      "role": "admin"
+    },
+    {
+      "username": "customer",
+      "email": "customer@example.com",
+      "password": "12345",
+      "role": "customer"
+    },
+    {
+      "username": "jack.underhill",
+      "email": "jack.underhill@wsu.edu",
+      "password": "12345",
+      "role": "admin"
+    }
+  ]
