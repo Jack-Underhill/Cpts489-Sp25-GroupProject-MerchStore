@@ -1,0 +1,30 @@
+.account-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    /* padding-top: 80px; */
+}
+.account-title {
+    margin-bottom: 20px;
+}
+
+#profile-info {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+#logout-customer {
+    background-color: #981E32;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#logout-customer:hover {
+    background-color: #7a1628;
+}

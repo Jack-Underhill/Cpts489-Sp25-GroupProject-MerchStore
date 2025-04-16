@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WSU Merch - Shipping</title>
+    <link rel="stylesheet" href="/styles/shipping.css">
+
+    <!-- Common Styles -->
+    <div id="styles-placeholder"></div>
+    <script src="/js/templateStyles.js"></script>
+</head>
+
+<body>
+
+    <!-- header -->
+    <div id="header-placeholder"></div>
+
+    <!-- nav -->
+    <div id="nav-placeholder"></div>
+
+    <main>
+        <div class="progress">
+            <div>1. Shopping Cart</div>
+            <div style="background-color: #981e32; color: white;">2. Shipping Details</div>
+            <div>3. Payment Options</div>
+        </div>
+        <div class="order-details">
+            <div class="form-section">
+                <h2>Shipping Details</h2>
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="text" placeholder="Address 1">
+                <input type="text" placeholder="Country">
+                <input type="text" placeholder="City">
+                <input type="text" placeholder="ZIP/Postal Code">
+                <input type="text" placeholder="Phone Number">
+                <div class="shipping-options">
+                    <div>
+                        <input type="radio" id="free" name="shipping" checked>
+                        <label for="free">Free Shipping (2-3 days)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="nextday" name="shipping">
+                        <label for="nextday">Next Day Delivery + $Price</label>
+                    </div>
+                </div>
+                <button onclick="location.href='checkout.html'">Next</button>
+                <button>Cancel</button>
+            </div>
+            <div class="summary">
+                <h3>Summary</h3>
+                <div class="items">
+                    <div>
+                        <div>img</div>
+                        <p>Product Name</p>
+                        <p>Price</p>
+                    </div>
+                </div>
+                <div class="totals">
+                    <p>Shipping: </p>
+                    <p>Taxes: </p>
+                    <p>Total: </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- scripts -->
+    <script src="/js/header.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/shipping.js"></script>
+</body>
+
+</html>

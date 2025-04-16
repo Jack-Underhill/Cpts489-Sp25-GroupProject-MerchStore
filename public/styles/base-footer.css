@@ -1,0 +1,36 @@
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #53565A;
+    color: white;
+    border-top: 3px solid #ddd;
+}
+footer p{
+    margin: 10px 0px;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0px;
+    padding: 0px;
+    gap: 20px;
+}
+.contact {
+    background-color: #FFFFFF;
+    color: #B22222;
+    font-weight: bold;
+    
+    margin: 0px;
+    padding: 0px;
+    border-radius: 5px;
+
+    width: 100px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
